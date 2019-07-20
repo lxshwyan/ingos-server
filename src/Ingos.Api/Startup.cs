@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ingos.Api.Core.Swagger;
 using Ingos.Api.Core.Version;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -53,10 +55,13 @@ namespace Ingos.Api
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials()));
+
+            // Add swagger api doc support
+            services.AddSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
@@ -74,6 +79,18 @@ namespace Ingos.Api
             app.UseCors(_defaultCorsPolicyName);
 
             app.UseMvc();
+
+            // Enable swagger doc
+            app.UseSwagger();
+            app.UseSwaggerUI(s =>
+            {
+                // Default load the latest version
+                foreach (var description in provider.ApiVersionDescriptions.Reverse())
+                {
+                    s.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
+                        $"Sample API {description.GroupName.ToUpperInvariant()}");
+                }
+            });
         }
     }
 }
