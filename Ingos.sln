@@ -13,17 +13,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Entities", "01_Entities"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Infrastructure", "02_Infrastructure", "{91AEBD06-8063-4BDF-A478-4E7AC117788D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Entities", "src\01_Entities\Ingos.Entities\Ingos.Entities.csproj", "{93E9CC84-FE04-4805-BF64-D21C758EF165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ingos.Entities", "src\01_Entities\Ingos.Entities\Ingos.Entities.csproj", "{93E9CC84-FE04-4805-BF64-D21C758EF165}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_Domain", "03_Domain", "{D9C9E226-728C-470C-A6B4-DEFD9A272A0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_Application", "04_Application", "{411B80F8-CB09-46B5-8AFB-3958DA82B791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Infrastructure", "src\02_Infrastructure\Ingos.Infrastructure\Ingos.Infrastructure.csproj", "{39A603E0-3EAC-4FA7-ACF7-6CBC355C775D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ingos.Infrastructure", "src\02_Infrastructure\Ingos.Infrastructure\Ingos.Infrastructure.csproj", "{39A603E0-3EAC-4FA7-ACF7-6CBC355C775D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Domain", "src\03_Domain\Ingos.Domain\Ingos.Domain.csproj", "{2ADA2F6E-C0F8-4DE0-8A2F-9CE3B8F74114}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ingos.Domain", "src\03_Domain\Ingos.Domain\Ingos.Domain.csproj", "{2ADA2F6E-C0F8-4DE0-8A2F-9CE3B8F74114}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Application", "src\04_Application\Ingos.Application\Ingos.Application.csproj", "{7B78510B-6B23-4712-88C2-6DB68A2A4DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ingos.Application", "src\04_Application\Ingos.Application\Ingos.Application.csproj", "{7B78510B-6B23-4712-88C2-6DB68A2A4DED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_Core", "05_Core", "{C4FB6D55-8503-4EEC-BB78-13D7AF5AA957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Api.Core", "src\05_Core\Ingos.Api.Core\Ingos.Api.Core.csproj", "{1927B51F-849C-4E71-A8CF-D1746DA5F7AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Dto", "src\04_Application\Ingos.Dto\Ingos.Dto.csproj", "{4EDE823A-F9F3-4E97-990A-4EB189554099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Api.Test", "test\Ingos.Api.Test\Ingos.Api.Test.csproj", "{276C5E62-EAB4-45D2-A32D-68F2B043036C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingos.Application.Test", "test\Ingos.Application.Test\Ingos.Application.Test.csproj", "{9CDC54E7-E1EF-481C-AB2D-6C4D7E589308}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +61,22 @@ Global
 		{7B78510B-6B23-4712-88C2-6DB68A2A4DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B78510B-6B23-4712-88C2-6DB68A2A4DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B78510B-6B23-4712-88C2-6DB68A2A4DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1927B51F-849C-4E71-A8CF-D1746DA5F7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1927B51F-849C-4E71-A8CF-D1746DA5F7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1927B51F-849C-4E71-A8CF-D1746DA5F7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1927B51F-849C-4E71-A8CF-D1746DA5F7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EDE823A-F9F3-4E97-990A-4EB189554099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDE823A-F9F3-4E97-990A-4EB189554099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDE823A-F9F3-4E97-990A-4EB189554099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDE823A-F9F3-4E97-990A-4EB189554099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276C5E62-EAB4-45D2-A32D-68F2B043036C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276C5E62-EAB4-45D2-A32D-68F2B043036C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276C5E62-EAB4-45D2-A32D-68F2B043036C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276C5E62-EAB4-45D2-A32D-68F2B043036C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CDC54E7-E1EF-481C-AB2D-6C4D7E589308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CDC54E7-E1EF-481C-AB2D-6C4D7E589308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CDC54E7-E1EF-481C-AB2D-6C4D7E589308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CDC54E7-E1EF-481C-AB2D-6C4D7E589308}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +91,11 @@ Global
 		{39A603E0-3EAC-4FA7-ACF7-6CBC355C775D} = {91AEBD06-8063-4BDF-A478-4E7AC117788D}
 		{2ADA2F6E-C0F8-4DE0-8A2F-9CE3B8F74114} = {D9C9E226-728C-470C-A6B4-DEFD9A272A0E}
 		{7B78510B-6B23-4712-88C2-6DB68A2A4DED} = {411B80F8-CB09-46B5-8AFB-3958DA82B791}
+		{C4FB6D55-8503-4EEC-BB78-13D7AF5AA957} = {30192F3C-5578-4073-A7E3-BD81F0BD51DA}
+		{1927B51F-849C-4E71-A8CF-D1746DA5F7AF} = {C4FB6D55-8503-4EEC-BB78-13D7AF5AA957}
+		{4EDE823A-F9F3-4E97-990A-4EB189554099} = {411B80F8-CB09-46B5-8AFB-3958DA82B791}
+		{276C5E62-EAB4-45D2-A32D-68F2B043036C} = {1AE4DFF2-1E08-44D1-B338-B9332F782B60}
+		{9CDC54E7-E1EF-481C-AB2D-6C4D7E589308} = {1AE4DFF2-1E08-44D1-B338-B9332F782B60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0C78475-05DA-409F-88B6-5B7FFD91EAA2}

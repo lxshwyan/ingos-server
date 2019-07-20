@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\03_Domain\Ingos.Domain\Ingos.Domain.csproj" />
+    <ProjectReference Include="..\Ingos.Dto\Ingos.Dto.csproj" />
+  </ItemGroup>
+
 </Project>
