@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\03_Domain\Ingos.Domain\Ingos.Domain.csproj" />
+    <ProjectReference Include="..\Ingos.Application.Core\Ingos.Application.Core.csproj" />
     <ProjectReference Include="..\Ingos.Dto\Ingos.Dto.csproj" />
   </ItemGroup>
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ingos.Dto.Basic.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,36 +13,78 @@ namespace Ingos.Api.Controllers.v1
     [Route("api/v{version:apiVersion}/[controller]")]
     public class UsersController : ControllerBase
     {
-        // GET: api/Users
+        #region APIs
+
+        /// <summary>
+        /// 获取全部的用户信息
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public IEnumerable<string> Get()
+        [ProducesResponseType(typeof(IEnumerable<UserListDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IEnumerable<UserListDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return null;
         }
 
-        // GET: api/Users/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        /// <summary>
+        /// 根据条件搜索网站用户信息
+        /// </summary>
+        /// <param name="search">搜索用户信息数据传输对象</param>
+        /// <returns></returns>
+        [HttpGet("query")]
+        [ProducesResponseType(typeof(IEnumerable<UserListDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public string Get([FromQuery]UserSearchDto search)
         {
             return "value";
         }
 
-        // POST: api/Users
+        /// <summary>
+        /// 新增用户信息
+        /// </summary>
+        /// <param name="edit">用户编辑信息数据传输对象</param>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public void Post([FromBody] UserEditDto edit)
         {
         }
 
-        // PUT: api/Users/5
+        /// <summary>
+        /// 更新用户信息
+        /// </summary>
+        /// <param name="id">用户唯一标识</param>
+        /// <param name="edit">用户编辑信息数据传输对象</param>
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
+        public void Put(string id, [FromBody] UserEditDto edit)
         {
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        /// <summary>
+        /// 更新用户状态
+        /// </summary>
+        /// <param name="id">用户唯一标识</param>
+        [HttpPut("{id}/refresh")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
+        public void Put(string id)
         {
         }
+
+        /// <summary>
+        /// 删除用户信息
+        /// </summary>
+        /// <param name="id">用户唯一标识</param>
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
+        public void Delete(string id)
+        {
+        }
+
+        #endregion APIs
     }
 }

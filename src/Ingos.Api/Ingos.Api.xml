@@ -4,5 +4,43 @@
         <name>Ingos.Api</name>
     </assembly>
     <members>
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Get">
+            <summary>
+            获取全部的用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Get(Ingos.Dto.Basic.User.UserSearchDto)">
+            <summary>
+            根据条件搜索网站用户信息
+            </summary>
+            <param name="search">搜索用户信息数据传输对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Post(Ingos.Dto.Basic.User.UserEditDto)">
+            <summary>
+            新增用户信息
+            </summary>
+            <param name="edit">用户编辑信息数据传输对象</param>
+        </member>
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Put(System.String,Ingos.Dto.Basic.User.UserEditDto)">
+            <summary>
+            更新用户信息
+            </summary>
+            <param name="id">用户唯一标识</param>
+            <param name="edit">用户编辑信息数据传输对象</param>
+        </member>
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Put(System.String)">
+            <summary>
+            更新用户状态
+            </summary>
+            <param name="id">用户唯一标识</param>
+        </member>
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Delete(System.String)">
+            <summary>
+            删除用户信息
+            </summary>
+            <param name="id">用户唯一标识</param>
+        </member>
     </members>
 </doc>
