@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ingos.Api.Core.Version;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +40,9 @@ namespace Ingos.Api
             {
                 options.LowercaseUrls = true;
             });
+
+            // Config api version
+            services.AddApiVersion();
 
             // Config cors policy
             services.AddCors(options => options.AddPolicy(_defaultCorsPolicyName,
