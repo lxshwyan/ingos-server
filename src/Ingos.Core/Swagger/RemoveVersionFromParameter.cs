@@ -3,7 +3,7 @@
 //     Copyright (c) Danvic.Wang All rights reserved.
 // </copyright>
 // Author: Danvic.Wang
-// Created DateTime: 2019/7/20 17:28:47
+// Created DateTime: 2019/7/20 21:52:36
 // Modified by:
 // Description: Remove version param must input in swagger doc
 //-----------------------------------------------------------------------
@@ -11,7 +11,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Linq;
 
-namespace Ingos.Api.Core.Swagger
+namespace Ingos.Core.Swagger
 {
     public class RemoveVersionFromParameter : IOperationFilter
     {

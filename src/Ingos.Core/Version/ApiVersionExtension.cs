@@ -3,14 +3,14 @@
 //     Copyright (c) Danvic.Wang All rights reserved.
 // </copyright>
 // Author: Danvic.Wang
-// Created DateTime: 2019/7/20 16:38:42
+// Created DateTime: 2019/7/20 21:55:54
 // Modified by:
 // Description: Api version extension method
 //-----------------------------------------------------------------------
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ingos.Api.Core.Version
+namespace Ingos.Core.Version
 {
     public static class ApiVersionExtension
     {

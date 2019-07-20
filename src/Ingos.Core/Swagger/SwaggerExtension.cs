@@ -3,7 +3,7 @@
 //     Copyright (c) Danvic.Wang All rights reserved.
 // </copyright>
 // Author: Danvic.Wang
-// Created DateTime: 2019/7/20 17:24:21
+// Created DateTime: 2019/7/20 21:54:00
 // Modified by:
 // Description: Swagger configuraion's extension method
 //-----------------------------------------------------------------------
@@ -14,7 +14,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace Ingos.Api.Core.Swagger
+namespace Ingos.Core.Swagger
 {
     public static class SwaggerExtension
     {

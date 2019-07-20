@@ -22,7 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\04_Application\Ingos.Application\Ingos.Application.csproj" />
     <ProjectReference Include="..\04_Application\Ingos.Dto\Ingos.Dto.csproj" />
-    <ProjectReference Include="..\05_Core\Ingos.Api.Core\Ingos.Api.Core.csproj" />
+    <ProjectReference Include="..\Ingos.Core\Ingos.Core.csproj" />
   </ItemGroup>
 
 </Project>
