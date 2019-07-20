@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,9 @@ namespace Ingos.Api
 {
     public class Startup
     {
+        // Default Cors policy name
+        private const string _defaultCorsPolicyName = "Ingos.Api.Cors";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,13 +29,26 @@ namespace Ingos.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(
+                // Add cors authorization filter
+                options => options.Filters.Add(new CorsAuthorizationFilterFactory(_defaultCorsPolicyName))
+            ).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Use lowercase urls router mode
             services.AddRouting(options =>
             {
                 options.LowercaseUrls = true;
             });
+
+            // Config cors policy
+            services.AddCors(options => options.AddPolicy(_defaultCorsPolicyName,
+                builder => builder.WithOrigins(
+                        Configuration["Application:CorsOrigins"]
+                        .Split(",", StringSplitOptions.RemoveEmptyEntries).ToArray()
+                    )
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +65,10 @@ namespace Ingos.Api
             }
 
             app.UseHttpsRedirection();
+
+            // Allow cross domain request
+            app.UseCors(_defaultCorsPolicyName);
+
             app.UseMvc();
         }
     }
