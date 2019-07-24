@@ -14,7 +14,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace Ingos.Core.Swagger
+namespace Ingos.Core.Extension.Swagger
 {
     public static class SwaggerExtension
     {

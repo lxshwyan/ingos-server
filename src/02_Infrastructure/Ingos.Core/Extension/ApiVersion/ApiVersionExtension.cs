@@ -7,10 +7,9 @@
 // Modified by:
 // Description: Api version extension method
 //-----------------------------------------------------------------------
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ingos.Core.Version
+namespace Ingos.Core.Extension.ApiVersion
 {
     public static class ApiVersionExtension
     {
@@ -27,7 +26,7 @@ namespace Ingos.Core.Version
                 o.ReportApiVersions = true;
 
                 // default api version
-                o.DefaultApiVersion = new ApiVersion(1, 0);
+                o.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
 
                 // when not specifying an api version, select the default version
                 o.AssumeDefaultVersionWhenUnspecified = true;

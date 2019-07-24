@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ingos.Core.Swagger;
-using Ingos.Core.Version;
+using Ingos.Core.Extension.ApiVersion;
+using Ingos.Core.Extension.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
