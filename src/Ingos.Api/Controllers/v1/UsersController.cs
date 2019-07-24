@@ -22,9 +22,20 @@ namespace Ingos.Api.Controllers.v1
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<UserListDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IEnumerable<UserListDto> Get()
+        public IActionResult Get()
         {
-            return null;
+            // 1、Get resource data
+
+            // 2、Determine if the request was successful
+            if (true)
+                return Ok(new List<UserListDto>());
+            else
+                return BadRequest(new
+                {
+                    statusCode = StatusCodes.Status400BadRequest,
+                    description = "The error description",
+                    msg = "The detail error message"
+                });
         }
 
         /// <summary>
@@ -35,9 +46,9 @@ namespace Ingos.Api.Controllers.v1
         [HttpGet("query")]
         [ProducesResponseType(typeof(IEnumerable<UserListDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public string Get([FromQuery]UserSearchDto search)
+        public IActionResult Get([FromQuery]UserSearchDto search)
         {
-            return "value";
+            return Ok();
         }
 
         /// <summary>
@@ -47,8 +58,9 @@ namespace Ingos.Api.Controllers.v1
         [HttpPost]
         [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public void Post([FromBody] UserEditDto edit)
+        public IActionResult Post([FromBody] UserEditDto edit)
         {
+            return Created("", new UserEditDto());
         }
 
         /// <summary>
@@ -59,8 +71,9 @@ namespace Ingos.Api.Controllers.v1
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
-        public void Put(string id, [FromBody] UserEditDto edit)
+        public IActionResult Put(string id, [FromBody] UserEditDto edit)
         {
+            return Ok();
         }
 
         /// <summary>
@@ -70,8 +83,9 @@ namespace Ingos.Api.Controllers.v1
         [HttpPut("{id}/refresh")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
-        public void Put(string id)
+        public IActionResult Put(string id)
         {
+            return Ok();
         }
 
         /// <summary>
@@ -81,8 +95,9 @@ namespace Ingos.Api.Controllers.v1
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
-        public void Delete(string id)
+        public IActionResult Delete(string id)
         {
+            return Delete(id);
         }
 
         #endregion APIs
