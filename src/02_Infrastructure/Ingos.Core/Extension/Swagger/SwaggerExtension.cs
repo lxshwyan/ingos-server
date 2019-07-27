@@ -55,12 +55,17 @@ namespace Ingos.Core.Extension.Swagger
                     return true;
                 });
 
+                // Let params use the camel naming method
+                s.DescribeAllParametersInCamelCase();
+
                 // Remove version param must input in swagger doc
                 s.OperationFilter<RemoveVersionFromParameter>();
 
                 // Get project's api description file
                 var basePath = Path.GetDirectoryName(AppContext.BaseDirectory);
-                var dtoPath = Path.Combine(basePath, "Ingos.Api.xml");
+                var apiPath = Path.Combine(basePath, "Ingos.Api.xml");
+                var dtoPath = Path.Combine(basePath, "Ingos.Dto.xml");
+                s.IncludeXmlComments(apiPath, true);
                 s.IncludeXmlComments(dtoPath, true);
             });
         }

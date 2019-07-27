@@ -20,8 +20,9 @@ namespace Ingos.Api.Controllers.v1
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<UserListDto>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(IList<UserListDto>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesDefaultResponseType]
         public IActionResult Get()
         {
             // 1、Get resource data
@@ -36,6 +37,26 @@ namespace Ingos.Api.Controllers.v1
                     description = "The error description",
                     msg = "The detail error message"
                 });
+        }
+
+        /// <summary>
+        /// 获取用户详细信息
+        /// </summary>
+        /// <param name="id">用户唯一标识</param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType(typeof(UserEditDto))]
+        public IActionResult Get(string id)
+        {
+            // 1、Get resource data by id
+            UserEditDto user = null;
+
+            if (user == null)
+                return NotFound();
+            else
+                return Ok(user);
         }
 
         /// <summary>
@@ -71,6 +92,7 @@ namespace Ingos.Api.Controllers.v1
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Put(string id, [FromBody] UserEditDto edit)
         {
             return Ok();
@@ -83,6 +105,7 @@ namespace Ingos.Api.Controllers.v1
         [HttpPut("{id}/refresh")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(UserEditDto), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Put(string id)
         {
             return Ok();

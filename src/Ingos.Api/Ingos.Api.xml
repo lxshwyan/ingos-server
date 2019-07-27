@@ -10,6 +10,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Get(System.String)">
+            <summary>
+            获取用户详细信息
+            </summary>
+            <param name="id">用户唯一标识</param>
+            <returns></returns>
+        </member>
         <member name="M:Ingos.Api.Controllers.v1.UsersController.Get(Ingos.Dto.Basic.User.UserSearchDto)">
             <summary>
             根据条件搜索网站用户信息

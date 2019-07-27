@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ingos.Dto</name>
+    </assembly>
+    <members>
+        <member name="P:Ingos.Dto.Basic.User.UserSearchDto.Id">
+            <summary>
+            用户唯一标识
+            </summary>
+        </member>
+        <member name="P:Ingos.Dto.Basic.User.UserSearchDto.Name">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:Ingos.Dto.Basic.User.UserSearchDto.Account">
+            <summary>
+            账户名称
+            </summary>
+        </member>
+        <member name="P:Ingos.Dto.Basic.User.UserSearchDto.Email">
+            <summary>
+            电子邮件地址
+            </summary>
+        </member>
+    </members>
+</doc>
