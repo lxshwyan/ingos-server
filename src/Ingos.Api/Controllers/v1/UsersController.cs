@@ -1,10 +1,19 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file= "UsersController.cs">
+//     Copyright (c) Danvic.Wang All rights reserved.
+// </copyright>
+// Author: Danvic.Wang
+// Created DateTime: 2019/7/27 17:25:53
+// Modified by:
+// Description:
+//-----------------------------------------------------------------------
+using Ingos.Application.User.Dtos;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ingos.Dto.Basic.User;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Ingos.Api.Controllers.v1
 {

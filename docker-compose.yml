@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ingos.api:
+    image: ${DOCKER_REGISTRY-}ingosapi
+    build:
+      context: .
+      dockerfile: src/Ingos.Api/Dockerfile

@@ -17,20 +17,20 @@
             <param name="id">用户唯一标识</param>
             <returns></returns>
         </member>
-        <member name="M:Ingos.Api.Controllers.v1.UsersController.Get(Ingos.Dto.Basic.User.UserSearchDto)">
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Get(Ingos.Application.User.Dtos.UserSearchDto)">
             <summary>
             根据条件搜索网站用户信息
             </summary>
             <param name="search">搜索用户信息数据传输对象</param>
             <returns></returns>
         </member>
-        <member name="M:Ingos.Api.Controllers.v1.UsersController.Post(Ingos.Dto.Basic.User.UserEditDto)">
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Post(Ingos.Application.User.Dtos.UserEditDto)">
             <summary>
             新增用户信息
             </summary>
             <param name="edit">用户编辑信息数据传输对象</param>
         </member>
-        <member name="M:Ingos.Api.Controllers.v1.UsersController.Put(System.String,Ingos.Dto.Basic.User.UserEditDto)">
+        <member name="M:Ingos.Api.Controllers.v1.UsersController.Put(System.String,Ingos.Application.User.Dtos.UserEditDto)">
             <summary>
             更新用户信息
             </summary>

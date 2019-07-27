@@ -5,10 +5,12 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["Ingos.Api/Ingos.Api.csproj", "Ingos.Api/"]
-RUN dotnet restore "Ingos.Api/Ingos.Api.csproj"
+COPY ["src/Ingos.Api/Ingos.Api.csproj", "src/Ingos.Api/"]
+COPY ["src/01_Infrastructure/Ingos.Api.Core/Ingos.Api.Core.csproj", "src/01_Infrastructure/Ingos.Api.Core/"]
+COPY ["src/03_Application/Ingos.Application/Ingos.Application.csproj", "src/03_Application/Ingos.Application/"]
+RUN dotnet restore "src/Ingos.Api/Ingos.Api.csproj"
 COPY . .
-WORKDIR "/src/Ingos.Api"
+WORKDIR "/src/src/Ingos.Api"
 RUN dotnet build "Ingos.Api.csproj" -c Release -o /app
 
 FROM build AS publish

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ingos.Core.Extension.ApiVersion;
-using Ingos.Core.Extension.Swagger;
+using Ingos.Api.Core.Extension.ApiVersion;
+using Ingos.Api.Core.Extension.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -82,6 +82,7 @@ namespace Ingos.Api
 
             // Enable swagger doc
             app.UseSwagger();
+
             app.UseSwaggerUI(s =>
             {
                 // Default load the latest version
